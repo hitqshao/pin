@@ -1,0 +1,654 @@
+./source/include/pin/gen/pin_client.PH:  See @ref INS_InsertCall. When the instruction has a predicate and the predicate is false, the analysis
+./source/include/pin/gen/pin_client.PH:  INS_InsertPredicatedCall is identical to @ref INS_InsertCall.
+./source/include/pin/gen/pin_client.PH:extern VOID INS_InsertCall(INS ins, IPOINT action, AFUNPTR funptr, ...);
+./source/include/pin/gen/pin_client.PH:        INS_InsertCall(ins, IPOINT_BEFORE,
+./source/include/pin/gen/pin_client.PH:            INS_InsertCall(ins, IPOINT_BEFORE,
+./source/include/pin/gen/types_vmapi.PH: INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(docount), IARG_FAST_ANALYSIS_CALL, IARG_UINT32, 3, IARG_END);
+./source/tools/GracefulExit/create_and_exit_thread.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoTest), IARG_THREAD_ID, IARG_CONTEXT, IARG_END);
+./source/tools/DebugTrace/debugtrace.cpp:    INS_InsertCall(ins, point, AFUNPTR(EmitXMM), IARG_THREAD_ID, IARG_UINT32, xmm_dst - REG_XMM0, IARG_REG_CONST_REFERENCE,
+./source/tools/DebugTrace/debugtrace.cpp:    INS_InsertCall(ins, point, emitFuns[regCount], IARG_THREAD_ID, IARG_PTR, new string(traceString), IARG_IARGLIST, args,
+./source/tools/DebugTrace/debugtrace.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmitIndirectCall), IARG_THREAD_ID, IARG_PTR, new string(s),
+./source/tools/DebugTrace/debugtrace.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmitDirectCall), IARG_THREAD_ID, IARG_PTR, new string(s), IARG_BOOL,
+./source/tools/DebugTrace/debugtrace.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmitReturn), IARG_THREAD_ID, IARG_PTR, new string(tracestring),
+./source/tools/DebugTrace/debugtrace.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CaptureWriteEa), IARG_THREAD_ID, IARG_MEMORYWRITE_EA, IARG_END);
+./source/tools/LinuxTests/unmap_relro.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TranslateMemRef, IARG_MEMORYOP_EA, (ADDRINT)i, IARG_REG_VALUE, REG_INST_PTR,
+./source/tools/LinuxTests/vsyscall_area_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(InsAnalysisBefore), IARG_INST_PTR, IARG_BRANCH_TARGET_ADDR, IARG_BRANCH_TAKEN,
+./source/tools/LinuxTests/vsyscall_area_tool.cpp:            INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(InsAnalysisBranchTaken), IARG_INST_PTR, IARG_BRANCH_TARGET_ADDR,
+./source/tools/LinuxTests/vsyscall_area_tool.cpp:                INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(InsAnalysisAfter), IARG_BRANCH_TARGET_ADDR, IARG_END);
+./source/tools/SyncTests/rt-locks-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(UseLocksWorker), IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case_aoti1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version base", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case_aoti1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 1", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case_aoti1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 2", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case_aoti1.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(select_version), IARG_FUNCARG_ENTRYPOINT_VALUE, 0, IARG_REG_VALUE, version_reg,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order6.cpp:        INS_InsertCall(BBL_InsHead(TRACE_BblHead(trace)), IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace_INS instrumentation",
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order6.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/special_case1.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(select_version), IARG_FUNCARG_ENTRYPOINT_VALUE, 0, IARG_RETURN_REGS,
+./source/tools/InstrumentationOrderAndVersion/special_case1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version base", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 1", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 2", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case3.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(select_version), IARG_FUNCARG_ENTRYPOINT_VALUE, 0, IARG_RETURN_REGS,
+./source/tools/InstrumentationOrderAndVersion/special_case3.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version base", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case3.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 1", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case3.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 2", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order13.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation3", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation", IARG_CALL_ORDER,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order1.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 1,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order1.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST,
+./source/tools/InstrumentationOrderAndVersion/special_case2.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(select_version), IARG_FUNCARG_ENTRYPOINT_VALUE, 0, IARG_RETURN_REGS,
+./source/tools/InstrumentationOrderAndVersion/special_case2.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version base", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case2.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 1", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case2.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 2", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order11.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation3", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation", IARG_CALL_ORDER,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 1,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order17.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST + 2,
+./source/tools/InstrumentationOrderAndVersion/special_case.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(select_version), IARG_FUNCARG_ENTRYPOINT_VALUE, 0, IARG_RETURN_REGS,
+./source/tools/InstrumentationOrderAndVersion/special_case.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version base", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 1", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 2", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order7.cpp:        INS_InsertCall(BBL_InsHead(TRACE_BblHead(trace)), IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace_INS instrumentation",
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order7.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order16.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST + 2,
+./source/tools/InstrumentationOrderAndVersion/special_case_aoti.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version base", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case_aoti.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 1", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case_aoti.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "version 2", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/special_case_aoti.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(select_version), IARG_FUNCARG_ENTRYPOINT_VALUE, 0, IARG_REG_VALUE, version_reg,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order19.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order4.cpp:        INS_InsertCall(BBL_InsHead(TRACE_BblHead(trace)), IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace_INS instrumentation",
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order4.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order5.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order18.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order10.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation1", IARG_CALL_ORDER,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order10.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation2", IARG_CALL_ORDER,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order10.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation1", IARG_CALL_ORDER, CALL_ORDER_FIRST + 1,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order10.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order10.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation1", IARG_CALL_ORDER, CALL_ORDER_FIRST + 7,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order10.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST + 6,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order10.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation1", IARG_CALL_ORDER, CALL_ORDER_FIRST + 5,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order10.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST + 4,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order12.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation3", IARG_END);
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order3.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 2,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order2.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order9.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation1", IARG_CALL_ORDER,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order9.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation2", IARG_CALL_ORDER,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order9.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation1", IARG_CALL_ORDER, CALL_ORDER_FIRST,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order9.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order9.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation1", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order9.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order9.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation1", IARG_CALL_ORDER, CALL_ORDER_FIRST + 2,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order9.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation2", IARG_CALL_ORDER, CALL_ORDER_FIRST + 2,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order8.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Trace instrumentation", IARG_CALL_ORDER,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order8.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "Ins instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order8.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "RTN instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 3,
+./source/tools/InstrumentationOrderAndVersion/instrumentation_order8.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Emit), IARG_PTR, "IMG instrumentation", IARG_CALL_ORDER, CALL_ORDER_FIRST + 2,
+./source/tools/SegTrace/segtrace.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(OnSegGsOrFsReference), IARG_UINT32, seg, IARG_REG_VALUE, seg,
+./source/tools/SegTrace/segtrace.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(OnSegReference), IARG_UINT32, seg, IARG_REG_VALUE, seg,
+./source/tools/SegTrace/segtrace.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(OnSegWriteBefore), IARG_UINT32, seg, IARG_REG_VALUE, seg,
+./source/tools/SegTrace/segtrace.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(OnSegWriteAfterContext), IARG_CONST_CONTEXT, IARG_END);
+./source/tools/SegTrace/segtrace.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(OnSegWriteAfter), IARG_UINT32, seg, IARG_REG_VALUE, seg, IARG_REG_REFERENCE,
+./source/tools/SegTrace/segtrace.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(OnSyscallBefore), IARG_SYSCALL_NUMBER, IARG_SYSARG_VALUE, 0, IARG_SYSARG_VALUE,
+./source/tools/SegTrace/segtrace.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(OnSyscallAfter), IARG_SYSRET_VALUE, IARG_REG_VALUE, REG_SEG_FS, IARG_REG_VALUE,
+./source/tools/InstLib/debugger-shell.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)ReturnAddrint, IARG_CALL_ORDER, me->_clientArgs._callOrderBefore,
+./source/tools/InstLib/debugger-shell.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IncrementIcount, IARG_CALL_ORDER, _clientArgs._callOrderBefore,
+./source/tools/InstLib/debugger-shell.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IncrementIMcount, IARG_CALL_ORDER, _clientArgs._callOrderBefore,
+./source/tools/InstLib/debugger-shell.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IncrementIcount, IARG_CALL_ORDER, _clientArgs._callOrderBefore,
+./source/tools/InstLib/debugger-shell.cpp:                INS_InsertCall(ins, ipoint, (AFUNPTR)RecordTracepointAndReg, IARG_CALL_ORDER, order, IARG_PTR, this, IARG_UINT32,
+./source/tools/InstLib/debugger-shell.cpp:                INS_InsertCall(ins, ipoint, (AFUNPTR)RecordTracepoint, IARG_CALL_ORDER, order, IARG_PTR, this, IARG_UINT32,
+./source/tools/InstLib/debugger-shell.cpp:            INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)ReturnZero, IARG_CALL_ORDER, _clientArgs._callOrderAfter,
+./source/tools/InstLib/debugger-shell.cpp:            INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)ReturnZero, IARG_CALL_ORDER, _clientArgs._callOrderAfter,
+./source/tools/InstLib/call-stack.cpp:            INS_InsertCall(tail, IPOINT_BEFORE, (AFUNPTR)a_process_call, IARG_ADDRINT, target, IARG_REG_VALUE, REG_STACK_PTR,
+./source/tools/InstLib/call-stack.cpp:                INS_InsertCall(tail, IPOINT_TAKEN_BRANCH, (AFUNPTR)a_on_call, IARG_ADDRINT, target, IARG_PTR, mngr,
+./source/tools/InstLib/call-stack.cpp:            INS_InsertCall(tail, IPOINT_TAKEN_BRANCH, (AFUNPTR)a_process_call, IARG_BRANCH_TARGET_ADDR, IARG_REG_VALUE,
+./source/tools/InstLib/call-stack.cpp:            INS_InsertCall(tail, IPOINT_BEFORE, (AFUNPTR)a_process_return, IARG_REG_VALUE, REG_STACK_PTR, IARG_INST_PTR,
+./source/tools/InstLib/time_warp.H:                    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)SwizzleEdx, IARG_PTR, v, IARG_RETURN_REGS, REG_GDX, IARG_END);
+./source/tools/InstLib/time_warp.H:                    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)SwizzleEax, IARG_PTR, v, IARG_RETURN_REGS, REG_GAX, IARG_END);
+./source/tools/InstLib/follow_child.H:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(StaticFollowExec), IARG_PTR, v, IARG_SYSCALL_NUMBER, IARG_SYSARG_REFERENCE, 0,
+./source/tools/InstLib/icount.H:                        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CountDuplicates), IARG_FAST_ANALYSIS_CALL, IARG_ADDRINT,
+./source/tools/InstLib/control_manager.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ICount), IARG_CALL_ORDER, call_order, IARG_ADDRINT, v, IARG_UINT32, ninst,
+./source/tools/SyscallsEmulation/mmap.cpp:    SyscallCallbackType_INS_InsertCall              = 2
+./source/tools/SyscallsEmulation/mmap.cpp:bool _matched_INS_InsertCall              = false;
+./source/tools/SyscallsEmulation/mmap.cpp:                case SyscallCallbackType_INS_InsertCall:
+./source/tools/SyscallsEmulation/mmap.cpp:                    _matched_INS_InsertCall = true;
+./source/tools/SyscallsEmulation/mmap.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SysBefore), IARG_INST_PTR, IARG_SYSCALL_NUMBER, IARG_SYSARG_VALUE, 0,
+./source/tools/SyscallsEmulation/mmap.cpp:                       5, IARG_ADDRINT, (ADDRINT)SyscallCallbackType_INS_InsertCall, IARG_END);
+./source/tools/SyscallsEmulation/mmap.cpp:    else if (!_matched_INS_InsertCall)
+./source/tools/SyscallsEmulation/mmap.cpp:        fprintf(trace, "Didn't had a callback for mmap with INS_InsertCall\n");
+./source/tools/InstructionTests/flush_cache_line.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)FlushInstruction, IARG_MEMORYREAD_EA, IARG_MEMORYREAD_SIZE, IARG_END);
+./source/tools/InstructionTests/rewritememop1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(printRegisterDiffs), IARG_THREAD_ID,
+./source/tools/InstructionTests/rewritememop1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(printInstruction), IARG_THREAD_ID, IARG_ADDRINT, formatInstruction(ins),
+./source/tools/InstructionTests/rewritememop1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ProcessAddress), IARG_UINT32, i, IARG_MEMORYOP_EA, i, IARG_INST_PTR,
+./source/tools/InstructionTests/rewritememop1.cpp:            INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(BranchTaken), IARG_INST_PTR, IARG_END);
+./source/tools/ManualExamples/inscount0.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/ManualExamples/safecopy.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoLoad), IARG_UINT32, REG(INS_OperandReg(ins, 0)), IARG_MEMORYREAD_EA,
+./source/tools/ManualExamples/emudiv.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmulateIntDivide), IARG_REG_REFERENCE, REG_GDX, IARG_REG_REFERENCE, REG_GAX,
+./source/tools/ManualExamples/emudiv.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmulateMemDivide), IARG_REG_REFERENCE, REG_GDX, IARG_REG_REFERENCE, REG_GAX,
+./source/tools/ManualExamples/invocation.cpp:        // RTN_InsertCall() and INS_InsertCall() are executed in order of
+./source/tools/ManualExamples/invocation.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Before, IARG_CONTEXT, IARG_END);
+./source/tools/ManualExamples/invocation.cpp:                    INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)Taken, IARG_CONTEXT, IARG_END);
+./source/tools/ManualExamples/countreps.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)addCount, IARG_UINT32, opIdx, IARG_FIRST_REP_ITERATION, IARG_EXECUTING,
+./source/tools/ManualExamples/countreps.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)addMemops, IARG_UINT32, opIdx, IARG_EXECUTING, IARG_UINT32, op->reads,
+./source/tools/ManualExamples/countreps.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)logMemoryAddress, IARG_UINT32, opIdx, IARG_FIRST_REP_ITERATION,
+./source/tools/ManualExamples/countreps.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)logMemoryAddress, IARG_UINT32, opIdx, IARG_FIRST_REP_ITERATION,
+./source/tools/ManualExamples/countreps.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)logMemoryAddress, IARG_UINT32, opIdx, IARG_FIRST_REP_ITERATION,
+./source/tools/ManualExamples/detach.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END); }
+./source/tools/ManualExamples/proccount.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_PTR, &(rc->_icount), IARG_END);
+./source/tools/ManualExamples/itrace.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)printip, IARG_INST_PTR, IARG_END);
+./source/tools/ManualExamples/strace.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SysBefore), IARG_INST_PTR, IARG_SYSCALL_NUMBER, IARG_SYSARG_VALUE, 0,
+./source/tools/ManualExamples/strace.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(SysAfter), IARG_SYSRET_VALUE, IARG_END);
+./source/tools/Mmx/mmx_test2_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONST_CONTEXT, IARG_END);
+./source/tools/Mmx/mmx_test1_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONST_CONTEXT, IARG_END);
+./source/tools/Replay/replay_syscall.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)syscallInstructionInstrumentation, IARG_THREAD_ID, IARG_CONTEXT, IARG_END);
+./source/tools/Replay/record_imageload2.cpp:static VOID InstrumentInstruction(INS ins, void*) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)ReplayImageEntry, IARG_END); }
+./source/tools/Replay/call_function_natively.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(HandleCallInHello), IARG_ADDRINT, v, IARG_END);
+./source/tools/Insmix/insmix.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_FAST_ANALYSIS_CALL, IARG_PTR,
+./source/tools/SignalTests/reg-pressure-tool.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(MakePressure), IARG_RETURN_REGS, retReg, IARG_REG_VALUE, REG_STACK_PTR,
+./source/tools/SignalTests/faultcheck_flags_tool2.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)setdf, IARG_FAST_ANALYSIS_CALL, IARG_END); }
+./source/tools/SignalTests/null-rewrite-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(GetMemAddress), IARG_MEMORYOP_EA, memIndex, IARG_RETURN_REGS, scratchReg,
+./source/tools/SignalTests/spilltool.cpp:void Ins(INS ins, VOID*) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Spill), IARG_END); }
+./source/tools/SignalTests/faultcheck_flags_tool1.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_FAST_ANALYSIS_CALL, IARG_UINT32, 1, IARG_END);
+./source/tools/SignalTests/syncasynctool.cpp:        if (INS_Valid(first)) INS_InsertCall(first, IPOINT_BEFORE, (AFUNPTR)AtSegv, IARG_END);
+./source/tools/SignalTests/faultcheck_flags_tool3.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)setdf, IARG_FAST_ANALYSIS_CALL, IARG_END); }
+./source/tools/SignalTests/faulttool.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(OnInstruction), IARG_PTR, (void*)16, IARG_END);
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoUnmappedRead), (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoUnmappedWrite),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoInaccessibleRead),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoInaccessibleWrite),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoMisalignedRead),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoMisalignedWrite),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoIllegalInstruction),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoPrivilegedInstruction),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoIntegerDivideByZero),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoIntegerOverflowTrap),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoBoundTrap), (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoX87DivideByZero),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoX87Overflow), (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoX87Underflow), (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoX87Precision), (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoX87InvalidOperation),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoX87DenormalizedOperand),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoX87StackUnderflow),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoX87StackOverflow),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoSIMDDivideByZero),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoSIMDOverflow), (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoSIMDUnderflow),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoSIMDPrecision),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoSIMDInvalidOperation),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoSIMDDenormalizedOperand),
+./source/tools/SignalTests/raise-exception-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoBreakpointTrap),
+./source/tools/DebugInfo/omit_source_location.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/DebugInfo/omit_source_location.cpp:                INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)docount, IARG_MEMORYREAD_EA, IARG_END);
+./source/tools/DebugInfo/omit_source_location.cpp:                INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)docount, IARG_MEMORYOP_EA, INS_MemoryOperandCount(ins) + 1, IARG_END);
+./source/tools/InlinedFuncsOpt/inlined_shr.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Proc1, IARG_END); }
+./source/tools/InlinedFuncsOpt/inlined_funcs_opt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IfProc1, IARG_END);
+./source/tools/InlinedFuncsOpt/inlined_funcs_opt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IfProc2, IARG_END);
+./source/tools/InlinedFuncsOpt/inlined_funcs_opt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IfProc3, IARG_END);
+./source/tools/InlinedFuncsOpt/inlined_funcs_opt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IfProc4, IARG_END);
+./source/tools/InlinedFuncsOpt/inlined_funcs_opt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IfProc5, IARG_END);
+./source/tools/InlinedFuncsOpt/inlined_funcs_opt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IfProc6, IARG_END);
+./source/tools/InlinedFuncsOpt/inlined_funcs_opt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IfProc7, IARG_END);
+./source/tools/InlinedFuncsOpt/inlined_funcs_opt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IfProc10, IARG_END);
+./source/tools/AttachDetach/jit_instr_detach.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/AttachDetach/detach_syscall.cpp:    INS_InsertCall(RTN_InsHead(rtn), IPOINT_BEFORE, (AFUNPTR)newFn, IARG_END);
+./source/tools/AttachDetach/detach_after_addss.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)inject, IARG_REG_REFERENCE, INS_RegW(ins, 0), IARG_END);
+./source/tools/AttachDetach/jit_anls_detach.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/Maid/Maid.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)A_DoMem, IARG_BOOL, INS_IsMemoryWrite(ins),
+./source/tools/Maid/Maid.cpp:                INS_InsertCall(tail, IPOINT_BEFORE, (AFUNPTR)A_ProcessStub, IARG_INST_PTR, IARG_BRANCH_TARGET_ADDR,
+./source/tools/Regvalue/iarg_reg_reference.cpp:                    INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(ChangeRegAfter), IARG_UINT32, reg, IARG_REG_REFERENCE, reg,
+./source/tools/Regvalue/iarg_reg_reference.cpp:                    INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(ChangeRegAfter), IARG_UINT32, reg, IARG_REG_CONST_REFERENCE, reg,
+./source/tools/Regvalue/xsave_iarg_mem.cpp:                INS_InsertCall(ins, TESTCASE_IPOINT[KnobIpoint.Value()],
+./source/tools/Regvalue/xsave_iarg_mem.cpp:                INS_InsertCall(ins, TESTCASE_IPOINT[KnobIpoint.Value()],
+./source/tools/Regvalue/xsave_iarg_mem.cpp:                INS_InsertCall(ins, TESTCASE_IPOINT[KnobIpoint.Value()],
+./source/tools/Regvalue/change_context_rflags.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(GetAndSetRflagsBefore), IARG_CONTEXT, IARG_INST_PTR, IARG_END);
+./source/tools/Regvalue/change_context_rflags.cpp:        INS_InsertCall(nextIns, IPOINT_BEFORE, AFUNPTR(GetAndRestoreRflagsAfter), IARG_CONTEXT, IARG_INST_PTR, IARG_END);
+./source/tools/Regvalue/change_context_rflags.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(GetAndSetRflagsBefore), IARG_PARTIAL_CONTEXT, &regsIn, &regsOut, IARG_INST_PTR,
+./source/tools/Regvalue/change_context_rflags.cpp:        INS_InsertCall(nextIns, IPOINT_BEFORE, AFUNPTR(GetAndRestoreRflagsAfter), IARG_PARTIAL_CONTEXT, &regsIn, &regsOut,
+./source/tools/Regvalue/fptag_conversion.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)CheckFptagConversion, IARG_MEMORYOP_EA, 0, IARG_CONST_CONTEXT, IARG_END);
+./source/tools/Regvalue/iarg_reg_reference_flags.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ChangeRegBefore), IARG_REG_REFERENCE, REG_AppFlags(), IARG_END);
+./source/tools/Regvalue/iarg_reg_reference_flags.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ChangeRegBefore), IARG_REG_CONST_REFERENCE, REG_AppFlags(), IARG_END);
+./source/tools/Tests/clear_df_flag_tool.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)cleardf, IARG_FAST_ANALYSIS_CALL, IARG_END); }
+./source/tools/Tests/ea_verifier.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalyzeBTMemAddr, IARG_UINT32, INS_EffectiveAddressWidth(ins), IARG_UINT32,
+./source/tools/Tests/reg_ref_inlined.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CaptureEspBefore), IARG_REG_VALUE, REG_STACK_PTR, IARG_END);
+./source/tools/Tests/reg_ref_inlined.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CaptureRefWithReturnReg), IARG_REG_REFERENCE, REG_GAX,
+./source/tools/Tests/reg_ref_inlined.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CaptureRef), IARG_REG_REFERENCE, REG_GAX, IARG_REG_CONST_REFERENCE, REG_GAX,
+./source/tools/Tests/reg_ref_inlined.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CaptureEspAfter), IARG_REG_VALUE, REG_STACK_PTR, IARG_END);
+./source/tools/Tests/alah.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)ahal, IARG_END);
+./source/tools/Tests/alah.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)Check, IARG_END);
+./source/tools/Tests/cflowcheck.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, (AFUNPTR)CheckPc, IARG_INST_PTR, IARG_END);
+./source/tools/Tests/cflowcheck.cpp:            INS_InsertCall(tail, IPOINT_BEFORE, AFUNPTR(RecordPc), IARG_INST_PTR, IARG_BRANCH_TARGET_ADDR, IARG_BRANCH_TAKEN,
+./source/tools/Tests/cflowcheck.cpp:            INS_InsertCall(tail, IPOINT_AFTER, (AFUNPTR)RecordPc, IARG_INST_PTR, IARG_FALLTHROUGH_ADDR, IARG_BOOL, TRUE,
+./source/tools/Tests/cflowcheck.cpp:            INS_InsertCall(tail, IPOINT_BEFORE, (AFUNPTR)Skip, IARG_END);
+./source/tools/Tests/checkaddress.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CaptureEaAndValue), IARG_MEMORYREAD_EA, IARG_END);
+./source/tools/Tests/checkaddress.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(TestValue), IARG_INST_PTR, IARG_REG_VALUE, INS_RegW(ins, 0), IARG_END);
+./source/tools/Tests/callargs.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(FoobarArgs), IARG_FUNCARG_CALLSITE_VALUE, 0, IARG_FUNCARG_CALLSITE_VALUE, 1,
+./source/tools/Tests/callargs.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CallArgs), IARG_FUNCARG_CALLSITE_VALUE, 0, IARG_END);
+./source/tools/Tests/icount1.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END); }
+./source/tools/Tests/verify.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SaveEa), IARG_THREAD_ID, IARG_MEMORYREAD_EA, IARG_END);
+./source/tools/Tests/verify.cpp:    INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(CheckXlatAfter), IARG_THREAD_ID, IARG_REG_VALUE, REG_EAX, IARG_END);
+./source/tools/Tests/bblnull.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)BblRef, IARG_END);
+./source/tools/Tests/tracecount.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, (AFUNPTR)docount, IARG_UINT32, 1, IARG_END);
+./source/tools/Tests/snprintf.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(sn), IARG_CONTEXT, IARG_END);
+./source/tools/Tests/snprintf.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(sn), IARG_END);
+./source/tools/Tests/probe.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Mem), IARG_MEMORYREAD2_EA, IARG_MEMORYREAD_SIZE, IARG_END);
+./source/tools/Tests/probe.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Mem), IARG_MEMORYREAD_EA, IARG_MEMORYREAD_SIZE, IARG_END);
+./source/tools/Tests/probe.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Mem), IARG_MEMORYWRITE_EA, IARG_MEMORYWRITE_SIZE, IARG_END);
+./source/tools/Tests/win_cvapp_test_tool.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)activate_counting, IARG_THREAD_ID, IARG_END);
+./source/tools/Tests/win_cvapp_test_tool.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)deactivate_counting, IARG_THREAD_ID, IARG_END);
+./source/tools/Tests/win_cvapp_test_tool.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)emit_stats, IARG_THREAD_ID, IARG_END);
+./source/tools/Tests/win_cvapp_test_tool.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)zero_stats, IARG_THREAD_ID, IARG_END);
+./source/tools/Tests/win_cvapp_test_tool.cpp:        INS_InsertCall(head, IPOINT_BEFORE, AFUNPTR(docount_bbl), IARG_FAST_ANALYSIS_CALL, IARG_UINT32, basic_blocks,
+./source/tools/Tests/brtaken.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/Tests/reg.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_INST_PTR, IARG_REG_VALUE, REG_STACK_PTR, IARG_END);
+./source/tools/Tests/icount2.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, (AFUNPTR)docount, IARG_UINT32, BBL_NumIns(bbl), IARG_END);
+./source/tools/Tests/const_context_at_ins.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)ReceiveContext, IARG_CONST_CONTEXT, IARG_END); }
+./source/tools/Tests/detach.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END); }
+./source/tools/Tests/xedReg.cpp:            if (pinreg == REG_EAX) INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)CountIfZero, IARG_REG_VALUE, REG_EAX, IARG_END);
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(RecordPriority), IARG_CALL_ORDER, CALL_ORDER_LAST, IARG_UINT32, plow, IARG_END);
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(RecordPriority), IARG_CALL_ORDER, CALL_ORDER_LAST, IARG_UINT32, plow + 1, IARG_END);
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(RecordPriority), IARG_CALL_ORDER, CALL_ORDER_DEFAULT, IARG_UINT32, pdefault, IARG_END);
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(RecordPriority), IARG_CALL_ORDER, CALL_ORDER_DEFAULT, IARG_UINT32, pdefault + 1,
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(RecordPriority), IARG_UINT32, pdefault + 2, IARG_END);
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(RecordPriority), IARG_UINT32, pdefault + 3, IARG_END);
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(RecordPriority), IARG_CALL_ORDER, CALL_ORDER_FIRST, IARG_UINT32, phigh, IARG_END);
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(RecordPriority), IARG_CALL_ORDER, CALL_ORDER_FIRST, IARG_UINT32, phigh + 1, IARG_END);
+./source/tools/Tests/after.cpp:    INS_InsertCall(ins, ipoint, AFUNPTR(CheckPriority), IARG_CALL_ORDER, CALL_ORDER_LAST, IARG_END);
+./source/tools/Tests/after.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(beforeCall), IARG_END);
+./source/tools/Tests/after.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(beforeCheck), IARG_END);
+./source/tools/Tests/after.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(afterCall), IARG_END);
+./source/tools/Tests/after.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(afterCheck), IARG_END);
+./source/tools/Tests/after.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(takenCall), IARG_END);
+./source/tools/Tests/after.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(takenCheck), IARG_END);
+./source/tools/Tests/traceusage.cpp:            INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)BblExit_Info, IARG_ADDRINT, BBL_Address(bbl), IARG_ADDRINT,
+./source/tools/Tests/traceusage.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TraceFall_Info, IARG_ADDRINT, TRACE_Address(trace), IARG_END);
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After1WithoutContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After1WithContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR, IARG_CONTEXT,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After2WithContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR, IARG_CONTEXT,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After2WithoutContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After3WithContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR, IARG_CONTEXT,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After3WithoutContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After4WithContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR, IARG_CONTEXT,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After4WithoutContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After5WithContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR, IARG_CONTEXT,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After5WithoutContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After6WithContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR, IARG_CONTEXT,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After6WithoutContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After7WithContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR, IARG_CONTEXT,
+./source/tools/Tests/rep_ip_at_ipoint_after_tool.cpp:    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)After7WithoutContext, IARG_REG_VALUE, REG_INST_PTR, IARG_INST_PTR,
+./source/tools/Tests/icount5.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(docount_before), IARG_UINT32, validForIpointAfter, IARG_END);
+./source/tools/Tests/icount5.cpp:                INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(docount_after), IARG_END);
+./source/tools/Tests/set_status_flags_tool.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_FAST_ANALYSIS_CALL, IARG_UINT32, 1, IARG_END);
+./source/tools/Tests/set_df_flag_tool.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)setdf, IARG_FAST_ANALYSIS_CALL, IARG_END); }
+./source/tools/Tests/emu.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(OpMV), IARG_MEMORYWRITE_EA, IARG_REG_VALUE, INS_OperandReg(ins, 1),
+./source/tools/Tests/emu.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(OpRV), IARG_REG_VALUE, INS_OperandReg(ins, 0), IARG_REG_VALUE,
+./source/tools/Tests/emu.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(OpRM), IARG_REG_VALUE, INS_OperandReg(ins, 0), IARG_MEMORYREAD_EA,
+./source/tools/Tests/sequencecheck.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)CheckSequence, IARG_INST_PTR, IARG_ADDRINT, INS_Address(ins), IARG_END);
+./source/tools/Tests/address_override_prefix_check_tool.cpp:        INS_InsertCall( ins, IPOINT_BEFORE, AFUNPTR(MoveImmediateToRegister),
+./source/tools/Tests/swizzle1.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)SwizzleAddress, IARG_REG_VALUE, basereg, IARG_RETURN_REGS, basereg, IARG_END);
+./source/tools/Tests/multipleinstrumentation.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(SysAfter), IARG_INST_PTR, IARG_END);
+./source/tools/Tests/icount3.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_EXECUTING, IARG_END); }
+./source/tools/IArg/iarg_uint64.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(AtIns1), IARG_UINT64, CONST_U64_1, IARG_UINT32, CONST_U32_1, IARG_UINT32,
+./source/tools/IArg/iarg_uint64.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(AtIns2), IARG_FAST_ANALYSIS_CALL, IARG_UINT64, CONST_U64_1, IARG_UINT32,
+./source/tools/IArg/iarg_uint64.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(AtIns3), IARG_UINT32, CONST_U32_1, IARG_UINT64, CONST_U64_1, IARG_UINT32,
+./source/tools/IArg/iarg_uint64.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(AtIns4), IARG_FAST_ANALYSIS_CALL, IARG_UINT32, CONST_U32_1, IARG_UINT64,
+./source/tools/IArg/iarg_uint64.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(AtIns5), IARG_UINT32, CONST_U32_1, IARG_UINT32, CONST_U32_2, IARG_UINT64,
+./source/tools/IArg/iarg_uint64.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(AtIns6), IARG_FAST_ANALYSIS_CALL, IARG_UINT32, CONST_U32_1, IARG_UINT32,
+./source/tools/IArg/iarg_first_rep_iteration_test.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)rep_analysis_rtn, IARG_FIRST_REP_ITERATION, IARG_REG_VALUE,
+./source/tools/IArg/fxsave_size.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(MemOpAnalysisFXSAVE), IARG_MEMORYWRITE_SIZE, IARG_END);
+./source/tools/IArg/fxsave_size.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(MemOpAnalysisFXRSTOR), IARG_MEMORYREAD_SIZE, IARG_END);
+./source/tools/IArg/iarg_branch_taken_error.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)analysis, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/IArg/iarg_branch_taken_correct.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)analysis, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/IArg/iarg_inst_ptr_error_msg.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(foo), IARG_REG_REFERENCE, REG_INST_PTR, IARG_END);
+./source/tools/IArg/iarg_inst_ptr_error_msg.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(foo), IARG_RETURN_REGS, REG_INST_PTR, IARG_END);
+./source/tools/IArg/iarg_inst_ptr_error_msg.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(const_ref), IARG_REG_CONST_REFERENCE, REG_INST_PTR, IARG_INST_PTR,
+./source/tools/ToolUnitTests/inlined-stack-arg.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)RecordFirstInstructionInfo, IARG_THREAD_ID, IARG_INST_PTR, IARG_ADDRINT, nextAddr,
+./source/tools/ToolUnitTests/inlined-stack-arg2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Analysis_func,
+./source/tools/ToolUnitTests/inlined-stack-arg2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Analysis_func_immed,
+./source/tools/ToolUnitTests/inlined-stack-arg2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Analysis_func_immed,
+./source/tools/ToolUnitTests/inlined-stack-arg2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Analysis_func_reg_overwrite,
+./source/tools/ToolUnitTests/inlined-stack-arg1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)RecordContext,
+./source/tools/ToolUnitTests/inlined-stack-arg1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)RecordContextFastCall, IARG_FAST_ANALYSIS_CALL, IARG_CONTEXT, IARG_THREAD_ID,
+./source/tools/ToolUnitTests/inlined-stack-arg1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)VerifyContext, IARG_INST_PTR, IARG_CONTEXT, IARG_THREAD_ID, IARG_END);
+./source/tools/ToolUnitTests/reg_value_xmm.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_VALUE, REG_XMM0, IARG_END);
+./source/tools/ToolUnitTests/popea_verifier.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(validateWriteAddress), IARG_INST_PTR, IARG_MEMORYWRITE_EA, IARG_REG_VALUE,
+./source/tools/ToolUnitTests/replace_rtl_alloc_heap.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(sysargs), IARG_SYSCALL_NUMBER, IARG_SYSARG_VALUE, 0, IARG_SYSARG_VALUE, 1,
+./source/tools/ToolUnitTests/replace_rtl_alloc_heap.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(sysret), IARG_SYSRET_VALUE, IARG_END);
+./source/tools/ToolUnitTests/replace_rtl_alloc_heap.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(printIp), IARG_INST_PTR, IARG_PTR, st->c_str(), IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve_mxcsr.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr),
+./source/tools/ToolUnitTests/xlat_ea.cpp:                            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(xlat_ins_analysis), IARG_MEMORYOP_EA, memOp, IARG_END);
+./source/tools/ToolUnitTests/rtn_insert_call2.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(BeforeInsHead), IARG_ADDRINT, INS_Address(ins), IARG_THREAD_ID,
+./source/tools/ToolUnitTests/rtn_insert_call2.cpp:                INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(AfterInsHead), IARG_ADDRINT, INS_Address(ins), IARG_THREAD_ID,
+./source/tools/ToolUnitTests/rtn_insert_call2.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(BeforeInsHeadOnly), IARG_ADDRINT, insAddress, IARG_THREAD_ID,
+./source/tools/ToolUnitTests/rtn_insert_call2.cpp:                INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(AfterInsHeadOnly), IARG_ADDRINT, insAddress, IARG_THREAD_ID, IARG_END);
+./source/tools/ToolUnitTests/passthru_context_xmm_regs_executeat.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)BEFORE_ReplacedXmmRegs,
+./source/tools/ToolUnitTests/align_access.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)CalcAlignment, IARG_PTR, info, IARG_MEMORYREAD_EA, IARG_END);
+./source/tools/ToolUnitTests/align_access.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)CalcAlignment, IARG_PTR, info, IARG_MEMORYWRITE_EA, IARG_END);
+./source/tools/ToolUnitTests/inline_opt_test_df1.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SetDf), IARG_END); }
+./source/tools/ToolUnitTests/code_cache_block_overflow1.cpp:            INS_InsertCall(BBL_InsHead(TRACE_BblHead(trace)), IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONST_CONTEXT, IARG_END);
+./source/tools/ToolUnitTests/earlyout.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoExit), IARG_END);
+./source/tools/ToolUnitTests/earlyout.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(NeverCalled), IARG_ADDRINT, 0, IARG_END);
+./source/tools/ToolUnitTests/args_err.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckIp), IARG_INST_PTR, IARG_ADDRINT, INS_Address(ins), IARG_ADDRINT,
+./source/tools/ToolUnitTests/args_err.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckIpFast), IARG_FAST_ANALYSIS_CALL, IARG_INST_PTR, IARG_ADDRINT,
+./source/tools/ToolUnitTests/args_err.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(PrintArgs), IARG_UINT32, 1, IARG_UINT32, 2, IARG_UINT32, 3, IARG_UINT32, 4,
+./source/tools/ToolUnitTests/stress_const_context2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)ConstContextAnalysisRoutine, IARG_INST_PTR, IARG_CONST_CONTEXT, IARG_ADDRINT,
+./source/tools/ToolUnitTests/guard_page.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(TouchMemory), IARG_MEMORYREAD_EA, IARG_END);
+./source/tools/ToolUnitTests/exception_monitor.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)UseToolStack, IARG_END);
+./source/tools/ToolUnitTests/internal_exception_handler.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)OnIns, IARG_END);
+./source/tools/ToolUnitTests/reg_ref_xmm.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_REFERENCE, REG_XMM0, IARG_END);
+./source/tools/ToolUnitTests/illegal_instrumentation.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)OnIns, IARG_END);
+./source/tools/ToolUnitTests/intrin.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(convert), IARG_MEMORYREAD_EA, IARG_END);
+./source/tools/ToolUnitTests/multimem.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)RecordMemoryAcess, IARG_INST_PTR, IARG_UINT32, 1, IARG_MEMORYREAD_EA,
+./source/tools/ToolUnitTests/multimem.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)RecordMemoryAcess, IARG_INST_PTR, IARG_UINT32, 2, IARG_MEMORYREAD2_EA,
+./source/tools/ToolUnitTests/multimem.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)RecordMemoryAcess, IARG_INST_PTR, IARG_UINT32, 3, IARG_MEMORYWRITE_EA,
+./source/tools/ToolUnitTests/multimem.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)CompareMultiMemAccess, IARG_INST_PTR, IARG_MULTI_MEMORYACCESS_EA, IARG_END);
+./source/tools/ToolUnitTests/stackalign.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckAlign), IARG_ADDRINT, 1, IARG_ADDRINT, 2, IARG_ADDRINT, 3, IARG_ADDRINT, 4,
+./source/tools/ToolUnitTests/rewritememop1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(printRegisterDiffs), IARG_THREAD_ID,
+./source/tools/ToolUnitTests/rewritememop1.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(printInstruction), IARG_THREAD_ID, IARG_ADDRINT, formatInstruction(ins),
+./source/tools/ToolUnitTests/rewritememop1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ProcessAddress), IARG_UINT32, i, IARG_MEMORYOP_EA, i, IARG_INST_PTR,
+./source/tools/ToolUnitTests/rewritememop1.cpp:            INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(BranchTaken), IARG_INST_PTR, IARG_END);
+./source/tools/ToolUnitTests/analysis_flag_overwrite_tool2.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)ReadFlags_asm, IARG_END); }
+./source/tools/ToolUnitTests/rtn_insert_call1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(BeforeInsHeadOnly), IARG_ADDRINT, INS_Address(ins), IARG_THREAD_ID,
+./source/tools/ToolUnitTests/rtn_insert_call1.cpp:                INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(AfterInsHeadOnly), IARG_ADDRINT, INS_Address(ins), IARG_THREAD_ID,
+./source/tools/ToolUnitTests/rtn_insert_call1.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(BeforeInsHead), IARG_ADDRINT, insAddress, IARG_THREAD_ID, IARG_END);
+./source/tools/ToolUnitTests/rtn_insert_call1.cpp:                INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(AfterInsHead), IARG_ADDRINT, insAddress, IARG_THREAD_ID, IARG_END);
+./source/tools/ToolUnitTests/reg_value_ymm.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_VALUE, REG_YMM0, IARG_END);
+./source/tools/ToolUnitTests/internal_exception_handler_lin.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)OnIns1, IARG_END);
+./source/tools/ToolUnitTests/internal_exception_handler_lin.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)OnIns2, IARG_END);
+./source/tools/ToolUnitTests/flag_ac_tool.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)UnalignedReadAndWrite, IARG_END);
+./source/tools/ToolUnitTests/flag_ac_tool.cpp:            INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)UnalignedReadAndWrite, IARG_END);
+./source/tools/ToolUnitTests/thread_count2.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)UseToolStack, IARG_END); }
+./source/tools/ToolUnitTests/spawntool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)cloneThread, IARG_ADDRINT, 0, IARG_END);
+./source/tools/ToolUnitTests/args_lineno.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckIp), IARG_INST_PTR, IARG_ADDRINT, INS_Address(ins), IARG_ADDRINT,
+./source/tools/ToolUnitTests/args_lineno.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckIpFast), IARG_FAST_ANALYSIS_CALL, IARG_INST_PTR, IARG_ADDRINT,
+./source/tools/ToolUnitTests/args_lineno.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(PrintArgs), IARG_UINT32, 1, IARG_UINT32, 2, IARG_UINT32, 3, IARG_UINT32, 4,
+./source/tools/ToolUnitTests/reg_context_set_x87.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONTEXT, IARG_END); }
+./source/tools/ToolUnitTests/swizzle3.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Unswizzle), IARG_MEMORYOP_EA, i, IARG_RETURN_REGS, REG_INST_G0 + i, IARG_END);
+./source/tools/ToolUnitTests/sse-ref.cpp:                                    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)BeforeTestConstContext, IARG_END);
+./source/tools/ToolUnitTests/sse-ref.cpp:                                    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)TestConstContext, IARG_CONST_CONTEXT, IARG_END);
+./source/tools/ToolUnitTests/sse-ref.cpp:                                    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)mmx_arg, IARG_REG_REFERENCE, r, IARG_UINT32, i,
+./source/tools/ToolUnitTests/sse-ref.cpp:                                    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)xmm_arg, IARG_REG_REFERENCE, r, IARG_UINT32, i,
+./source/tools/ToolUnitTests/swizzle_seg.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ProcessAddress), IARG_REG_VALUE, baseReg, IARG_MEMORYOP_EA, memopIdx,
+./source/tools/ToolUnitTests/reg_context_xmm.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/ToolUnitTests/clobber.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(clobberRegs), IARG_END); }
+./source/tools/ToolUnitTests/reg_ref_ymm.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_REFERNCE, REG_YMM0, IARG_END);
+./source/tools/ToolUnitTests/test_ip_access.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IpReadBefore, IARG_INST_PTR, IARG_MEMORYREAD_EA, IARG_REG_VALUE, REG_INST_PTR,
+./source/tools/ToolUnitTests/test_ip_access.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)IpReadAfter, IARG_REG_VALUE, REG_INST_PTR, IARG_END);
+./source/tools/ToolUnitTests/test_ip_access.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IpWriteBefore, IARG_INST_PTR, IARG_MEMORYWRITE_EA, IARG_REG_VALUE,
+./source/tools/ToolUnitTests/test_ip_access.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)IpWriteAfter, IARG_REG_VALUE, REG_INST_PTR, IARG_END);
+./source/tools/ToolUnitTests/insfetch_tool.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)incCount, IARG_END);
+./source/tools/ToolUnitTests/checkerrorfile.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)doNothing, IARG_MEMORYREAD_EA, IARG_END);
+./source/tools/ToolUnitTests/reg_context_fp_st.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/ToolUnitTests/sse-unaligned-class.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(copy_to_aligned_load_buffer_and_return_pointer), IARG_MEMORYREAD_EA,
+./source/tools/ToolUnitTests/sse-unaligned-class.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(return_pointer_to_aligned_store_buffer), IARG_MEMORYWRITE_EA,
+./source/tools/ToolUnitTests/sse-unaligned-class.cpp:            INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(copy_from_aligned_store_buffer), IARG_REG_VALUE, REG_INST_G1,
+./source/tools/ToolUnitTests/reg_value_fp_st.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_VALUE, REG_ST0, IARG_END);
+./source/tools/ToolUnitTests/df_test_tool1.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TestDfByReadFlags, IARG_END); }
+./source/tools/ToolUnitTests/check_fpstate.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)SaveContext, IARG_CONTEXT, IARG_END);
+./source/tools/ToolUnitTests/reg_context_set_const_context.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONST_CONTEXT, IARG_END); }
+./source/tools/ToolUnitTests/insertand.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(incinst), IARG_END);
+./source/tools/ToolUnitTests/insertand.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(andinst), IARG_END);
+./source/tools/ToolUnitTests/insertand.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(cmov_test), IARG_PTR, &cmov_data, IARG_END);
+./source/tools/ToolUnitTests/insertand.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(leainst), IARG_PTR, data, IARG_END);
+./source/tools/ToolUnitTests/insertand.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckData), IARG_END);
+./source/tools/ToolUnitTests/insertand.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(leaindex), IARG_REG_VALUE, REG_STACK_PTR, IARG_PTR, &res, IARG_END);
+./source/tools/ToolUnitTests/insertand.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(leaindex), IARG_REG_VALUE, REG_R9, IARG_PTR, &res, IARG_END);
+./source/tools/ToolUnitTests/swizzle2.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Unswizzle), IARG_MEMORYOP_EA, memopIdx, IARG_RETURN_REGS, scratchReg,
+./source/tools/ToolUnitTests/leave.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(print_memop), IARG_MEMORYREAD_EA, IARG_MEMORYREAD_SIZE, IARG_INST_PTR,
+./source/tools/ToolUnitTests/emu_stack.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuPushValue), IARG_REG_VALUE, REG_STACK_PTR, IARG_ADDRINT, value,
+./source/tools/ToolUnitTests/emu_stack.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuPushValue), IARG_REG_VALUE, REG_STACK_PTR, IARG_REG_VALUE, reg,
+./source/tools/ToolUnitTests/emu_stack.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuPushMem), IARG_REG_VALUE, REG_STACK_PTR, IARG_MEMORYREAD_EA,
+./source/tools/ToolUnitTests/emu_stack.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuPopReg), IARG_REG_VALUE, REG_STACK_PTR, IARG_REG_REFERENCE,
+./source/tools/ToolUnitTests/emu_stack.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuPopMem), IARG_REG_VALUE, REG_STACK_PTR, IARG_MEMORYWRITE_EA,
+./source/tools/ToolUnitTests/emu_stack.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuLeave), IARG_REG_VALUE, REG_STACK_PTR, IARG_REG_REFERENCE, REG_GBP,
+./source/tools/ToolUnitTests/emu_stack.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuCall), IARG_ADDRINT, INS_NextAddress(ins), IARG_BRANCH_TARGET_ADDR,
+./source/tools/ToolUnitTests/emu_stack.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuRet), IARG_CALL_ORDER, CALL_ORDER_FIRST, IARG_REG_REFERENCE, REG_STACK_PTR,
+./source/tools/ToolUnitTests/emu_stack.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuIndJmp), IARG_BRANCH_TARGET_ADDR, IARG_RETURN_REGS, scratchReg, IARG_END);
+./source/tools/ToolUnitTests/branch_target_addr.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AtBranch, IARG_INST_PTR, IARG_BRANCH_TARGET_ADDR, IARG_BRANCH_TAKEN,
+./source/tools/ToolUnitTests/branch_target_addr.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AtNonBranch, IARG_INST_PTR, IARG_END);
+./source/tools/ToolUnitTests/reptool.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Change, IARG_MEMORYREAD_EA, IARG_END);
+./source/tools/ToolUnitTests/reptool.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Restore, IARG_END);
+./source/tools/ToolUnitTests/reptool.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)SaveEa, IARG_MEMORYWRITE_EA, IARG_END);
+./source/tools/ToolUnitTests/df_test_tool2.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TestDfByMovsd, IARG_END); }
+./source/tools/ToolUnitTests/checkreps.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)addCount, IARG_INST_PTR, IARG_UINT32, opIdx, IARG_FIRST_REP_ITERATION,
+./source/tools/ToolUnitTests/checkreps.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)addMemops, IARG_UINT32, opIdx, IARG_EXECUTING, IARG_UINT32, op->reads,
+./source/tools/ToolUnitTests/checkreps.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)logMemoryAddress, IARG_UINT32, opIdx, IARG_FIRST_REP_ITERATION,
+./source/tools/ToolUnitTests/checkreps.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)logMemoryAddress, IARG_UINT32, opIdx, IARG_FIRST_REP_ITERATION,
+./source/tools/ToolUnitTests/checkreps.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)logMemoryAddress, IARG_UINT32, opIdx, IARG_FIRST_REP_ITERATION,
+./source/tools/ToolUnitTests/checkreps.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)ClearPrevRep, IARG_END);
+./source/tools/ToolUnitTests/df_test_tool3.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TestDfByMovsd, IARG_END); }
+./source/tools/ToolUnitTests/reg_value_x87.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_VALUE, REG_X87, IARG_END);
+./source/tools/ToolUnitTests/rewritememop.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ProcessAddress), IARG_MEMORYOP_EA, memopIdx, IARG_INST_PTR, IARG_RETURN_REGS,
+./source/tools/ToolUnitTests/df_test_tool4.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TestDfByMovsd, IARG_END); }
+./source/tools/ToolUnitTests/sse-unaligned-class2.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(copy_to_aligned_load_buffer_and_return_pointer), IARG_MEMORYREAD_EA,
+./source/tools/ToolUnitTests/sse-unaligned-class2.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(return_pointer_to_aligned_store_buffer), IARG_MEMORYWRITE_EA,
+./source/tools/ToolUnitTests/sse-unaligned-class2.cpp:            INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(copy_from_aligned_store_buffer), IARG_REG_VALUE, REG_INST_G1,
+./source/tools/ToolUnitTests/check_acall_inline_opt.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/ToolUnitTests/reg_context_set_xmm.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONTEXT, IARG_END); }
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(SetFpStackRegsForPartial),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(SetFpStackRegsForPartial),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(SetFpStackRegsForPartial),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToAddToXmmRegs),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToAddToXmmRegs),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(SetFpFcwForPartial_1),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(SetFpFcwForPartial_2),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(SetFpFcwForPartial_1),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(SetFpFcwForPartial_2),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToAdd1ToIntRegs),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetIntRegs), IARG_PARTIAL_CONTEXT,
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr2),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr2),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr2),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToAddToXmmRegs),
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetXmmRegs), IARG_PARTIAL_CONTEXT,
+./source/tools/ToolUnitTests/test_iarg_partial_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToTestFlags), IARG_PARTIAL_CONTEXT,
+./source/tools/ToolUnitTests/incebx.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END); }
+./source/tools/ToolUnitTests/fp_context_set_const_context.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONST_CONTEXT, IARG_END); }
+./source/tools/ToolUnitTests/context_state_apis.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)CheckContextState, IARG_CONTEXT, IARG_END);
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)printRegisterDiffs, IARG_THREAD_ID, IARG_CONTEXT, IARG_UINT32, where++, IARG_END);
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)printRegisterDiffs, IARG_THREAD_ID, IARG_CONTEXT, IARG_UINT32, where++,
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)countInst, IARG_UINT32, 0, IARG_END);
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)countInst, IARG_UINT32, 1, IARG_END);
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)printRegisterDiffs, IARG_THREAD_ID, IARG_CONTEXT, IARG_UINT32, where++,
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)printSz, IARG_MEMORYREAD_SIZE, IARG_INST_PTR, IARG_EXECUTING, IARG_REG_VALUE,
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)printCntVal, IARG_REG_VALUE, REG_ECX, IARG_END);
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)printRegisterDiffs, IARG_THREAD_ID, IARG_CONTEXT, IARG_UINT32, where++,
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)printRegisterDiffs, IARG_THREAD_ID, IARG_CONTEXT, IARG_UINT32, where++,
+./source/tools/ToolUnitTests/repcmpsz_tool.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)countReps, IARG_FIRST_REP_ITERATION, IARG_EXECUTING, IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetXmmRegsToZero), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetXmmRegsToZero), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetXmmRegsToZero), IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetXmmRegsToZero), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetXmmRegsToZero), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetIntRegsToZero), IARG_PRESERVE, &regsIntScratches, IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetIntRegsToZero), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetIntRegsToZero), IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToSetIntRegsToZero), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr),
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr),
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr),
+./source/tools/ToolUnitTests/test_iarg_preserve.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_PRESERVE,
+./source/tools/ToolUnitTests/flag_ac_win_tool.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)UnalignedReadAndWrite, IARG_END);
+./source/tools/ToolUnitTests/flag_ac_win_tool.cpp:            INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)UnalignedReadAndWrite, IARG_END);
+./source/tools/ToolUnitTests/ins_check_fetcher.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)(incCount), IARG_END);
+./source/tools/ToolUnitTests/reg_context_set_ymm.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONTEXT, IARG_END); }
+./source/tools/ToolUnitTests/emu_jumps.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(EmuIndJmp), IARG_BRANCH_TARGET_ADDR, IARG_RETURN_REGS, scratchReg, IARG_END);
+./source/tools/ToolUnitTests/emu_jumps.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)BranchBefore, IARG_THREAD_ID, IARG_INST_PTR, IARG_END);
+./source/tools/ToolUnitTests/emu_jumps.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)BranchTaken, IARG_THREAD_ID, IARG_INST_PTR, IARG_ADDRINT,
+./source/tools/ToolUnitTests/emu_jumps.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)BranchBefore, IARG_THREAD_ID, IARG_INST_PTR, IARG_END);
+./source/tools/ToolUnitTests/emu_jumps.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)BranchTaken, IARG_THREAD_ID, IARG_INST_PTR, IARG_ADDRINT,
+./source/tools/ToolUnitTests/replace_malloc_inst.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(sysargs), IARG_SYSCALL_NUMBER, IARG_SYSARG_VALUE, 0, IARG_SYSARG_VALUE, 1,
+./source/tools/ToolUnitTests/replace_malloc_inst.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(sysret), IARG_SYSRET_VALUE, IARG_END);
+./source/tools/ToolUnitTests/replace_malloc_inst.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(printIp), IARG_INST_PTR, IARG_PTR, st->c_str(), IARG_END);
+./source/tools/ToolUnitTests/strace_ia32.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SysBefore), IARG_INST_PTR, IARG_SYSCALL_NUMBER, IARG_SYSARG_VALUE, 0,
+./source/tools/ToolUnitTests/strace_ia32.cpp:        INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(SysAfter), IARG_SYSRET_VALUE, IARG_SYSRET_ERRNO, IARG_REG_VALUE, REG_GAX,
+./source/tools/ToolUnitTests/exception_monitor_for_iret_order.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)IretBefore, IARG_END);
+./source/tools/ToolUnitTests/exception_monitor_for_iret_order.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)IretAfter1, IARG_END);
+./source/tools/ToolUnitTests/exception_monitor_for_iret_order.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)IretAfter2, IARG_END);
+./source/tools/ToolUnitTests/aoti_mutation_tool.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(returnValue), IARG_ADDRINT, INS_Address(ins) + INS_Size(ins),
+./source/tools/ToolUnitTests/aoti_mutation_tool.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(AddrValueA), IARG_MEMORYOP_EA, 0, IARG_END);
+./source/tools/ToolUnitTests/aoti_mutation_tool.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(returnValueMinus4), IARG_MEMORYOP_EA, 0, IARG_RETURN_REGS, scratchReg,
+./source/tools/ToolUnitTests/aoti_mutation_tool.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(AddrValueB), IARG_MEMORYOP_EA, 0, IARG_END);
+./source/tools/ToolUnitTests/reg_ref_x87.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_REFERENCE, REG_X87, IARG_END);
+./source/tools/ToolUnitTests/swizzle5.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Unswizzle), IARG_MEMORYOP_EA, memopIdx, IARG_RETURN_REGS, scratchReg,
+./source/tools/ToolUnitTests/reg_context_x87.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/ToolUnitTests/flag_spill_fill_tool1.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)ZeroAppFlags_asm, IARG_END); }
+./source/tools/ToolUnitTests/callapp14.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)FunctionToBeReplacedAnalysisFunc, IARG_END);
+./source/tools/ToolUnitTests/callapp14.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)FunctionCalledByFunctionToBeReplacedAnalysisFunc, IARG_END);
+./source/tools/ToolUnitTests/inline_opt_test.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ZeroOutScratches), IARG_END); }
+./source/tools/ToolUnitTests/inlinecall.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(Two), IARG_RETURN_REGS, REG_GAX, IARG_END);
+./source/tools/ToolUnitTests/code_cache_block_overflow2.cpp:            INS_InsertCall(BBL_InsHead(TRACE_BblHead(trace)), IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONST_CONTEXT, IARG_END);
+./source/tools/ToolUnitTests/args.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckIp), IARG_INST_PTR, IARG_ADDRINT, INS_Address(ins), IARG_ADDRINT,
+./source/tools/ToolUnitTests/args.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckIpFast), IARG_FAST_ANALYSIS_CALL, IARG_INST_PTR, IARG_ADDRINT,
+./source/tools/ToolUnitTests/args.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(PrintArgs), IARG_UINT32, 1, IARG_UINT32, 2, IARG_UINT32, 3, IARG_UINT32, 4,
+./source/tools/ToolUnitTests/df_test_tool5.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TestDfByMovsd, IARG_END); }
+./source/tools/ToolUnitTests/syscall_std.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(BeforeSyscall), IARG_INST_PTR, IARG_SYSCALL_NUMBER, IARG_SYSARG_VALUE, 0,
+./source/tools/ToolUnitTests/syscall_std.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(BeforeMyAlloc), IARG_END);
+./source/tools/ToolUnitTests/reg_context_set_fp_st.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_CONTEXT, IARG_END); }
+./source/tools/ToolUnitTests/reg_ref_fp_st.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_REFERENCE, REG_ST0, IARG_END);
+./source/tools/ToolUnitTests/sw_interrupt.cpp:static VOID InstrumentInstruction(INS ins, VOID*) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)Count, IARG_END); }
+./source/tools/ToolUnitTests/returnreg.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SetVal), IARG_RETURN_REGS, REG_INST_G0, IARG_END);
+./source/tools/ToolUnitTests/returnreg.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckVal), IARG_REG_VALUE, REG_INST_G0, IARG_END);
+./source/tools/ToolUnitTests/returnreg.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SetValNoInline), IARG_RETURN_REGS, REG_INST_G1, IARG_END);
+./source/tools/ToolUnitTests/returnreg.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckValNoInline), IARG_REG_VALUE, REG_INST_G1, IARG_END);
+./source/tools/ToolUnitTests/analysis_flag_overwrite_tool3.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)WriteFlags_asm, IARG_END); }
+./source/tools/ToolUnitTests/syscall.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)BeforeSyscall, IARG_INST_PTR, IARG_END);
+./source/tools/ToolUnitTests/syscall.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)AfterSyscall, IARG_INST_PTR, IARG_END);
+./source/tools/ToolUnitTests/indirect_call_branch_target_addr.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(IpointBeforeIndirectThruStackCall), IARG_BRANCH_TARGET_ADDR, IARG_REG_VALUE,
+./source/tools/ToolUnitTests/indirect_call_branch_target_addr.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(IpointBeforeIndirectThruStackCall1), IARG_BRANCH_TARGET_ADDR, IARG_REG_VALUE,
+./source/tools/ToolUnitTests/indirect_call_branch_target_addr.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(IpointBeforeIndirectThruStackCall2), IARG_BRANCH_TARGET_ADDR, IARG_REG_VALUE,
+./source/tools/ToolUnitTests/indirect_call_branch_target_addr.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(IpointTakenBranchIndirectThruStackCall), IARG_BRANCH_TARGET_ADDR,
+./source/tools/ToolUnitTests/indirect_call_branch_target_addr.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(IpointTakenBranchIndirectThruStackCall1), IARG_BRANCH_TARGET_ADDR,
+./source/tools/ToolUnitTests/indirect_call_branch_target_addr.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(IpointTakenBranchIndirectThruStackCall2), IARG_BRANCH_TARGET_ADDR,
+./source/tools/ToolUnitTests/checkexecuting.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)toggleEnabled, IARG_END);
+./source/tools/ToolUnitTests/checkexecuting.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)doCount, IARG_EXECUTING, IARG_UINT32, opIdx, IARG_END);
+./source/tools/ToolUnitTests/flags_at_analysis_tool.cpp:                    INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, IARG_REG_VALUE, REG_GFLAGS,
+./source/tools/ToolUnitTests/test_iarg_preserve2.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve2.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_PRESERVE,
+./source/tools/ToolUnitTests/test_iarg_preserve2.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve2.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_PRESERVE,
+./source/tools/ToolUnitTests/ea_verifier_bt.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(ProcessAddress), IARG_ADDRINT, ADDRINT(formatInstruction(ins)),
+./source/tools/ToolUnitTests/returnflags.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SetFlags), IARG_REG_VALUE, REG_GFLAGS, IARG_RETURN_REGS, REG_GFLAGS,
+./source/tools/ToolUnitTests/returnflags.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckFlags), IARG_REG_VALUE, REG_GFLAGS, IARG_END);
+./source/tools/ToolUnitTests/returnflags.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SetFlagsNoInline), IARG_REG_VALUE, REG_GFLAGS, IARG_RETURN_REGS,
+./source/tools/ToolUnitTests/returnflags.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CheckFlagsNoInline), IARG_REG_VALUE, REG_GFLAGS, IARG_END);
+./source/tools/ToolUnitTests/callapp15.cpp:                    INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(myBlue), IARG_PROTOTYPE, protoBlue, IARG_CONTEXT, IARG_ADDRINT,
+./source/tools/ToolUnitTests/x87_regs_in_context.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToFldzToTop3), IARG_END);
+./source/tools/ToolUnitTests/reg_context_ymm.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFunc, (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/ToolUnitTests/xmmtest.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(TestXmm), IARG_INST_PTR, IARG_REG_REFERENCE, reg, IARG_REG_REFERENCE,
+./source/tools/ToolUnitTests/xmmtest.cpp:            INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(TestXmm), IARG_INST_PTR, IARG_REG_REFERENCE, reg, IARG_REG_REFERENCE,
+./source/tools/ToolUnitTests/reg_inst_gx.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)OnIns, IARG_THREAD_ID,
+./source/tools/ToolUnitTests/analysis_flag_overwrite_tool1.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)ReadWriteFlags_asm, IARG_END); }
+./source/tools/ToolUnitTests/teb.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(InGetLastError), IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve_mxcsr1.cpp:                    INS_InsertCall(INS_Next(ins), IPOINT_AFTER, AFUNPTR(CallToMaskZeroDivideInMxcsr), IARG_END);
+./source/tools/ToolUnitTests/test_iarg_preserve_mxcsr1.cpp:                            INS_InsertCall(INS_Next(INS_Next(ins)), IPOINT_AFTER, AFUNPTR(CallToUnMaskZeroDivideInMxcsr),
+./source/tools/ToolUnitTests/jcx_addr16_tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(VerifyNotTaken), IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/MemTranslate/rewrite_memory_ptr.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)NegValue, IARG_CALL_ORDER, CALL_ORDER_DEFAULT, IARG_MEMORYOP_EA, (ADDRINT)i,
+./source/tools/MemTranslate/rewrite_memory_ptr.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)CheckMemPtr, IARG_CALL_ORDER, CALL_ORDER_DEFAULT + 1, IARG_MEMORYOP_EA,
+./source/tools/MemTranslate/rewrite_memory_ptr.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)NegValue, IARG_CALL_ORDER, CALL_ORDER_DEFAULT + 2, IARG_REG_VALUE,
+./source/tools/MemTranslate/memory_addr_callback.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)readMemoryFunc, IARG_FAST_ANALYSIS_CALL, IARG_MEMORYREAD_EA,
+./source/tools/MemTranslate/memory_addr_callback.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)readXmmMemoryFunc, IARG_FAST_ANALYSIS_CALL, IARG_MEMORYREAD_PTR,
+./source/tools/MemTranslate/memory_addr_callback.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)verifyPrefetchFunc, IARG_FAST_ANALYSIS_CALL, IARG_MEMORYREAD_PTR,
+./source/tools/MemTranslate/memory_addr_callback.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)verifyAtomicFunc, IARG_FAST_ANALYSIS_CALL, IARG_MEMORYWRITE_PTR,
+./source/tools/MemTranslate/memory_addr_callback.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)writeMemoryFunc, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYWRITE_EA,
+./source/tools/MemTranslate/memory_addr_callback.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)opMemoryFunc, IARG_FAST_ANALYSIS_CALL, IARG_MEMORYOP_EA, memOp,
+./source/tools/MemTranslate/memory_addr_callback.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)verifyRmwFunc, IARG_FAST_ANALYSIS_CALL, IARG_MEMORYOP_PTR, memOp,
+./source/tools/MemTranslate/memory_addr_callback.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)read2MemoryFunc, IARG_FAST_ANALYSIS_CALL, IARG_MEMORYREAD_EA,
+./source/tools/MemTranslate/memory_callback_error.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)returnMemoryFunc, IARG_FAST_ANALYSIS_CALL, IARG_MEMORYOP_EA, memOp,
+./source/tools/MemTranslate/indirect_jmp_with_translation.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TranslateJmpMemRef, IARG_MEMORYOP_EA, 0, IARG_REG_VALUE, REG_STACK_PTR,
+./source/tools/MemTranslate/indirect_jmp_with_translation.cpp:            INS_InsertCall(ins, allIpoints[i], (AFUNPTR)IndirectJumpOrCall, IARG_FAST_ANALYSIS_CALL, IARG_ADDRINT,
+./source/tools/MemTranslate/malloc_translation.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SysBefore), IARG_SYSCALL_NUMBER, IARG_SYSARG_REFERENCE, 0,
+./source/tools/MemTranslate/malloc_translation.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)TranslateMemRef, IARG_MEMORYOP_EA, (ADDRINT)i, IARG_RETURN_REGS,
+./source/tools/MemTranslate/translate_32bit_register.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)replaceMemoryReadFunc, IARG_MEMORYOP_EA, 0, IARG_REG_VALUE, REG_INST_PTR,
+./source/tools/NonInlinedFuncsOpt/multiple_analysis.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/NonInlinedFuncsOpt/multiple_analysis.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/NonInlinedFuncsOpt/multiple_analysis.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/NonInlinedFuncsOpt/multiple_analysis.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/NonInlinedFuncsOpt/multiple_analysis.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END);
+./source/tools/SimpleExamples/trace.cpp:            INS_InsertCall(BBL_InsTail(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, new string(traceString), IARG_END);
+./source/tools/SimpleExamples/trace.cpp:            INS_InsertCall(BBL_InsTail(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, s, IARG_END);
+./source/tools/SimpleExamples/icount.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount, IARG_END); }
+./source/tools/SimpleExamples/regmix.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, &(bblstats->_counter), IARG_END);
+./source/tools/SimpleExamples/toprtn.cpp:            INS_InsertCall(tail, IPOINT_BEFORE, AFUNPTR(do_call_indirect), IARG_BRANCH_TARGET_ADDR, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/SimpleExamples/toprtn.cpp:                INS_InsertCall(tail, IPOINT_BEFORE, AFUNPTR(do_call_indirect), IARG_BRANCH_TARGET_ADDR, IARG_BRANCH_TAKEN,
+./source/tools/SimpleExamples/calltrace.cpp:                    INS_InsertCall(tail, IPOINT_BEFORE, AFUNPTR(do_call_args_indirect), IARG_BRANCH_TARGET_ADDR,
+./source/tools/SimpleExamples/calltrace.cpp:                    INS_InsertCall(tail, IPOINT_BEFORE, AFUNPTR(do_call_indirect), IARG_BRANCH_TARGET_ADDR, IARG_BRANCH_TAKEN,
+./source/tools/SimpleExamples/calltrace.cpp:                    INS_InsertCall(tail, IPOINT_BEFORE, AFUNPTR(do_call_args_indirect), IARG_BRANCH_TARGET_ADDR,
+./source/tools/SimpleExamples/calltrace.cpp:                    INS_InsertCall(tail, IPOINT_BEFORE, AFUNPTR(do_call_indirect), IARG_BRANCH_TARGET_ADDR, IARG_BRANCH_TAKEN,
+./source/tools/SimpleExamples/catmix.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, &(bblstats->_counter), IARG_END);
+./source/tools/SimpleExamples/pinatrace.cpp:            INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)RecordMemWrite, IARG_INST_PTR, IARG_END);
+./source/tools/SimpleExamples/pinatrace.cpp:            INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)RecordMemWrite, IARG_INST_PTR, IARG_END);
+./source/tools/SimpleExamples/coco.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, &(bblstats->_executed), IARG_END);
+./source/tools/SimpleExamples/edgcnt.cpp:        INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, (AFUNPTR)docount, IARG_ADDRINT, pedg, IARG_END);
+./source/tools/SimpleExamples/edgcnt.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)docount2, IARG_INST_PTR, IARG_BRANCH_TARGET_ADDR, IARG_ADDRINT,
+./source/tools/SimpleExamples/bsr_bsf.cpp:        INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)examine_z_flag, IARG_PTR,
+./source/tools/SimpleExamples/opcodemix.cpp:        INS_InsertCall(head, IPOINT_BEFORE, AFUNPTR(docount), IARG_FAST_ANALYSIS_CALL, IARG_PTR, &(bblstats->_counter), IARG_END);
+./source/tools/SimpleExamples/topopcode.cpp:        INS_InsertCall(head, IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, &(bblstats->_counter), IARG_END);
+./source/tools/SimpleExamples/ilenmix.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, &(bblstats->_counter), IARG_END);
+./source/tools/SimpleExamples/emuload.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoLoad), IARG_UINT32, REG(INS_OperandReg(ins, 0)), IARG_MEMORYREAD_EA,
+./source/tools/SimpleExamples/jumpmix.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)inc_return, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/SimpleExamples/jumpmix.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)inc_syscall, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/SimpleExamples/jumpmix.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)inc_call, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/SimpleExamples/jumpmix.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)inc_branch, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/SimpleExamples/jumpmix.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)inc_call_indirect, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/SimpleExamples/jumpmix.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)inc_branch_indirect, IARG_BRANCH_TAKEN, IARG_END);
+./source/tools/SimpleExamples/ldstmix.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, bblstats->_counter, IARG_THREAD_ID, IARG_END);
+./source/tools/SimpleExamples/xed-print.cpp:VOID Instruction(INS ins, VOID* v) { INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)use_xed, IARG_INST_PTR, IARG_END); }
+./source/tools/SimpleExamples/extmix.cpp:        INS_InsertCall(BBL_InsHead(bbl), IPOINT_BEFORE, AFUNPTR(docount), IARG_PTR, &(bblstats->_counter), IARG_END);
+./source/tools/ImageTests/img_find_by_addr.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)AnalysisFindImg, IARG_INST_PTR, IARG_END);
+./source/tools/Smc/flag_ac_tool.cpp:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)UnalignedReadAndWrite, IARG_END);
+./source/tools/Smc/flag_ac_tool.cpp:            INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)UnalignedReadAndWrite, IARG_END);
+./source/tools/Smc/sse-ref.cpp:                                    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)BeforeTestConstContext, IARG_END);
+./source/tools/Smc/sse-ref.cpp:                                    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)TestConstContext, IARG_CONST_CONTEXT, IARG_END);
+./source/tools/Smc/sse-ref.cpp:                                    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)mmx_arg, IARG_REG_REFERENCE, r, IARG_UINT32, i,
+./source/tools/Smc/sse-ref.cpp:                                    INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)xmm_arg, IARG_REG_REFERENCE, r, IARG_UINT32, i,
+./source/tools/MemTrace/memtrace.cpp:        INS_InsertCall(_ins, IPOINT_BEFORE, _afunptr, IARG_FAST_ANALYSIS_CALL, IARG_REG_VALUE, scratch_reg0, IARG_ADDRINT,
+./source/tools/MemTrace/memtrace_threadpool.cpp:        INS_InsertCall(_ins, IPOINT_BEFORE, AFUNPTR(APP_THREAD_REPRESENTITVE::RecordMEMREFInBuffer), IARG_FAST_ANALYSIS_CALL,
+./source/tools/MemTrace/memtrace_simple.cpp:        INS_InsertCall(_ins, IPOINT_BEFORE, AFUNPTR(APP_THREAD_REPRESENTITVE::RecordMEMREFInBuffer), IARG_FAST_ANALYSIS_CALL,
+./source/tools/Memory/allcache.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)InsRef, IARG_INST_PTR, IARG_END);
+./source/tools/Memory/pin_stack_overflow.cpp:VOID insCallback(INS ins, void* v) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(doStackOverflow), IARG_END); }
+./source/tools/Memory/pin_stack_fill.cpp:VOID insCallback(INS ins, void* v) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(fillThreadStack), IARG_THREAD_ID, IARG_END); }
+./source/tools/Memory/footprint.H:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)code, IARG_PTR, this, IARG_THREAD_ID, IARG_INST_PTR, IARG_UINT32, ins_bytes,
+./source/tools/Memory/footprint.H:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)load, IARG_PTR, this, IARG_THREAD_ID, IARG_MEMORYREAD_EA,
+./source/tools/Memory/footprint.H:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)load, IARG_PTR, this, IARG_THREAD_ID, IARG_MEMORYREAD2_EA,
+./source/tools/Memory/footprint.H:            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)store, IARG_PTR, this, IARG_THREAD_ID, IARG_MEMORYWRITE_EA,
+./source/tools/Memory/new_delete_tool.cpp:VOID insCallback(INS ins, void* v) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(doMemTest), IARG_THREAD_ID, IARG_END); }
+./source/tools/Mix/mix-mt.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)activate_counting, IARG_THREAD_ID, IARG_END);
+./source/tools/Mix/mix-mt.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)deactivate_counting, IARG_THREAD_ID, IARG_END);
+./source/tools/Mix/mix-mt.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)emit_stats, IARG_THREAD_ID, IARG_END);
+./source/tools/Mix/mix-mt.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)zero_stats, IARG_THREAD_ID, IARG_END);
+./source/tools/Mix/mix-mt.cpp:        INS_InsertCall(head, IPOINT_BEFORE, AFUNPTR(docount_bbl), IARG_FAST_ANALYSIS_CALL, IARG_UINT32, basic_blocks,
+./source/tools/Debugger/set_xmm_scratches_before_breakpoint.cpp:                INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)SetXmmScratchesFun, IARG_PTR, xmmInitVals, IARG_END);
+./source/tools/Debugger/set_xmm_scratches_before_breakpoint.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoBreakpoint, (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/Debugger/stop-resume-when-suspended.cpp:                INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(SuspendResume), IARG_THREAD_ID, IARG_END);
+./source/tools/Debugger/int3-count.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CountInt3), IARG_END);
+./source/tools/Debugger/int3-count.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(CountOther), IARG_END);
+./source/tools/Debugger/checkpoint.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)OnMemWrite, IARG_MEMORYWRITE_EA, IARG_MEMORYWRITE_SIZE, IARG_END);
+./source/tools/Debugger/app-pause-in-app-thread-tool.cpp:VOID insCallback(INS ins, void* v) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(doPause), IARG_THREAD_ID, IARG_END); }
+./source/tools/Debugger/set_xmm_scratches.cpp:                INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)SetXmmScratchesFun, IARG_PTR, xmmInitVals, IARG_END);
+./source/tools/Debugger/breaktool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoBreakpoint), (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/Debugger/breaktool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoBreakpoint), (KnobUseIargConstContext) ? IARG_CONST_CONTEXT : IARG_CONTEXT,
+./source/tools/Debugger/check-if-thread-stopped.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoBreakpoint), IARG_THREAD_ID, IARG_CONTEXT, IARG_END);
+./source/tools/Debugger/app-pause-in-int-thread-tool.cpp:VOID insCallback(INS ins, void* v) { INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(iCount), IARG_THREAD_ID, IARG_END); }
+./source/tools/Debugger/set_xmm_scratches_for_ymmtest.cpp:                INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)SetXmmScratchesFun, IARG_PTR, xmmInitVals, IARG_END);
+./source/tools/Debugger/simultaneous-toolbreak.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, AFUNPTR(DoBreakpoint), IARG_THREAD_ID,
+./source/tools/Debugger/simultaneous-toolbreak.cpp:            INS_InsertCall(ins, IPOINT_AFTER, AFUNPTR(ClearSkipPc), IARG_RETURN_REGS, RegSkipOne, IARG_END);
+./source/tools/Debugger/simultaneous-toolbreak.cpp:            INS_InsertCall(ins, IPOINT_TAKEN_BRANCH, AFUNPTR(ClearSkipPc), IARG_RETURN_REGS, RegSkipOne, IARG_END);
+./source/tools/Debugger/intercept-tool.cpp:        INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)OnMemWrite, IARG_MEMORYWRITE_EA, IARG_MEMORYWRITE_SIZE, IARG_END);
+./source/tools/Debugger/set_xmm_scratches_before_breakpoint_and_set_xmm_reg.cpp:                INS_InsertCall(ins, IPOINT_AFTER, (AFUNPTR)SetXmmScratchesFun, IARG_PTR, xmmInitVals, IARG_END);
+./source/tools/AlignChk/alignchk.H:                            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)check_alignment, IARG_MEMORYWRITE_EA, IARG_INST_PTR,
+./source/tools/AlignChk/alignchk.H:                            INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)check_alignment, IARG_MEMORYREAD_EA, IARG_INST_PTR,
+./source/tools/AlignChk/movdqa_test2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoXmm, IARG_END);
+./source/tools/AlignChk/movdqa_test2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoXmm, IARG_UINT32, 1, IARG_END);
+./source/tools/AlignChk/movdqa_test2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoXmm, IARG_UINT32, 1, IARG_UINT32, 2, IARG_END);
+./source/tools/AlignChk/movdqa_test2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoXmm, IARG_UINT32, 1, IARG_UINT32, 2, IARG_UINT32, 3, IARG_END);
+./source/tools/AlignChk/movdqa_test2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoXmm, IARG_REG_REFERENCE, REG_EAX, IARG_END);
+./source/tools/AlignChk/movdqa_test2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoXmm, IARG_REG_REFERENCE, REG_EAX, IARG_UINT32, 1, IARG_END);
+./source/tools/AlignChk/movdqa_test2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoXmm, IARG_REG_REFERENCE, REG_EAX, IARG_UINT32, 1, IARG_UINT32, 2, IARG_END);
+./source/tools/AlignChk/movdqa_test2.cpp:    INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)DoXmm, IARG_REG_REFERENCE, REG_EAX, IARG_UINT32, 1, IARG_UINT32, 2, IARG_UINT32,
