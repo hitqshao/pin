@@ -53,7 +53,11 @@ static void Count100MInst();
 /*
     64 cacheblk will be merged into a 4KB page in pageRecord
     64 4KB page will be merged into 256KB hugepage in hugePageRecord
+    16 256KB page will be merged into 4MB hugepage in superPageRecord
 */
+
+//4M
+static set<UINT64> superPageRecord;
 
 //256KB
 static set<UINT64> hugePageRecord;
@@ -142,8 +146,11 @@ VOID UpdateFullRecord4KB(ADDRINT addr)
     ADDRINT pageAligned = addr >> 6;
     ADDRINT pageOffset  = addr & (CACHESIZE-1);
     ADDRINT hugePageAligned = addr >> 12;
+    ADDRINT superPageAligned = addr >> 16;
 
-    if (hugePageRecord.count(hugePageAligned) != 0) {
+    if (superPageRecord.count(superPageAligned)) {
+        return;
+    } else if (hugePageRecord.count(hugePageAligned) != 0) {
         return;
     } else if (pageRecord.count(pageAligned) != 0) {
         return;
@@ -197,9 +204,33 @@ void UpdateHugePageRecord() {
     }
 }
 
+void UpdateSuperPageRecord() {
+    map<UINT64,int> procSuperPage;
+    set<UINT64> mergedPage;
+    for (auto iter = hugePageRecord.begin(); iter != hugePageRecord.end() ; iter++){
+        UINT64 superPageAddr = *iter >> 4;
+        if (procSuperPage.count(superPageAddr)== 0) {
+            procSuperPage[superPageAddr] = 1;
+        } else {
+            procSuperPage[superPageAddr] +=1;
+            if (procSuperPage[superPageAddr] == 16) {
+                hugePageRecord.insert(superPageAddr);
+                mergedPage.insert(superPageAddr);
+            }
+        }
+    }
+
+    for (auto iter = mergedPage.begin(); iter != mergedPage.end() ; iter++) {
+        for ( UINT64 pageOffset = 0 ; pageOffset < 16; pageOffset++) {
+            hugePageRecord.erase((*iter << 4) +pageOffset);
+        }
+    }
+}
+
 UINT64 GetFullFootPrint()
 {
     UINT64 fullsize = 0;
+    fullsize +=superPageRecord.size() * 4096*64*16;
     fullsize +=hugePageRecord.size() * 4096*64;
     fullsize +=pageRecord.size() * 4096;
     for (auto iter = memFootPrint4KB.begin();iter != memFootPrint4KB.end();iter++){
@@ -366,8 +397,6 @@ VOID PrintInfo(UINT64 instCnter,FootPrintInfo& footInfo)
     file_out << "@ footprint current " << std::dec << footInfo.currFoot << std::endl;
     file_out << "@ footprint increase " << footInfo.increase << std::endl;
     file_out << "@ Recent 100M inst footprint " << footInfo.recent100MFoot << std::endl;
-
-    memFootPrint100M.clear();
 }
 
 VOID PrintInfo()
@@ -390,7 +419,9 @@ VOID PrintInfo()
 VOID PrintPageInfo()
 {
     file_out << "---------------------------------" << std::endl;
-    file_out << "hugePage " << hugePageRecord.size() << " page " << pageRecord.size() << std::endl;
+    file_out << "superPage " << superPageRecord.size() << "hugePage " <<
+    hugePageRecord.size() << " page " << pageRecord.size() << std::endl;
+
     for(auto iter = hugePageRecord.begin(); iter != hugePageRecord.end(); iter++) {
         ADDRINT addr = *iter << 18;
         file_out << "@@ huge page addr " << std::hex << addr << std::endl;
@@ -442,10 +473,11 @@ int main(int argc, char* argv[])
 
 static void Count100MInst() {
     instCnter++;
-    // print cache info every 100M
+    // print footprint info every 100M
     if (instCnter % 100000000 == 0) {
         UpdateFootPrintEvery100M();
         WriteIntoInfoVec();
+        memFootPrint100M.clear();
         //PrintInfo();
     }
 
