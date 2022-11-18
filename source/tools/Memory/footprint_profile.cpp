@@ -499,8 +499,8 @@ static void Count100MInst() {
         memFootPrint1B.clear();
     }
 
-    // save some time 600B is enough
-    if (instCnter>600000000000)
+    // save some time 1200B is enough
+    if (instCnter>1200000000000)
         exit(0);
 }
 

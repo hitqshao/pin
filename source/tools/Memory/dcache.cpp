@@ -36,9 +36,10 @@ KNOB< UINT32 > KnobAssociativity(KNOB_MODE_WRITEONCE, "pintool", "a", "4", "cach
 
 /* ===================================================================== */
 static UINT64 instCnter = 0;
+static UINT64 instCnterHSB = 0;
 
 static void Count100MInst();
-
+static std::ofstream file_out;
 
 /* ===================================================================== */
 
@@ -232,18 +233,13 @@ VOID Instruction(INS ins, void* v)
 
 VOID PrintInfo()
 {
-    std::string fileName(KnobOutputFile.Value().c_str());
-    std::ofstream file_out;
-    file_out.open(fileName,std::ios_base::app);
-    file_out << "# InstCnt: " << instCnter << std::endl;
+    file_out << "# InstCnt: " << instCnterHSB << "00000000" << std::endl;
 
     file_out << "#\n"
            "# DCACHE stats\n"
            "#\n";
 
     file_out << dl1->StatsLong("# ", CACHE_BASE::CACHE_TYPE_DCACHE);
-
-    file_out.close();
 }
 
 VOID Fini(int code, VOID* v)
@@ -278,6 +274,9 @@ VOID Fini(int code, VOID* v)
 
 int main(int argc, char* argv[])
 {
+    std::string fileName(KnobOutputFile.Value().c_str());
+    file_out.open(fileName,std::ios_base::app);
+
     PIN_InitSymbols();
 
     if (PIN_Init(argc, argv))
@@ -304,6 +303,8 @@ int main(int argc, char* argv[])
 
     PIN_StartProgram();
 
+    file_out.close();
+
     return 0;
 }
 
@@ -311,7 +312,12 @@ static void Count100MInst() {
     instCnter++;
     if (instCnter % 100000000 == 0) {
         PrintInfo();
+        instCnter = 0;
+        instCnterHSB++;
     }
+    // save some time 1200B is enough
+    if (instCnterHSB>12000000)
+        exit(0);
 }
 
 /* ===================================================================== */
