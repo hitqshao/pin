@@ -23,7 +23,7 @@
 # defining the test name twice (once in TOOL_ROOTS and again in TEST_ROOTS).
 # Tests defined here should not be defined in TOOL_ROOTS and TEST_ROOTS.
 TEST_TOOL_ROOTS := icache dcache dcache_footprint dcache_instaddr allcache dcache_xscale_config footprint memalign address_mapping address_mapping_probe \
-                   memory_limit malloc_stress pin_stack_overflow footprint_profile
+                   memory_limit malloc_stress pin_stack_overflow footprint_profile footprint_profile_pc
 
 # This defines the tests to be run that were not already defined in TEST_TOOL_ROOTS.
 TEST_ROOTS := memory_allocation_access_protection new_delete address_mapping_oom address_mapping_zero check_memory_access \
